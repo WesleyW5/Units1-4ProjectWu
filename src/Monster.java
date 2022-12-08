@@ -1,15 +1,18 @@
 public class Monster {
     private int hp;
+    private int hp2;
     private String name;
+
 
     public Monster(int health, String name){
         hp = health;
         this.name = name;
+        hp2 = health;
     }
 
-    public int damage(int damage){
+    public String displayHealth(int damage){
        hp = hp - damage;
-       return hp;
+       return "Player has attacked for " + damage + " damage. " + name + "now has " + hp + "/" + hp2 + " health.";
     }
 
     public int attack(){
@@ -24,15 +27,6 @@ public class Monster {
 
     }
 
-    private int origHealth(){
-        int oldHealth = hp;
-        return oldHealth;
-    }
-
-
-   public void displayInfo(){
-        System.out.println(name + " has " + hp + "/" + origHealth() + " hitpoints left.");
-   }
 
 
 }
