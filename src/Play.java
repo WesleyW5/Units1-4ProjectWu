@@ -6,7 +6,7 @@ public class Play {
 
     player player1 = new player();
 
-    private Monster mon5 = new Monster(500, "Ronaldo");
+
     private Scanner scan;
 
     private void setNewMonster(Monster mon) {
@@ -20,6 +20,10 @@ public class Play {
         scan = new Scanner(System.in);
         System.out.println("You will have to beat the Hog Rider and survive to win.");
         System.out.println("You'll probably fail.");
+        System.out.println("Enter the name of who you wish to beat: ");
+        String name = scan.nextLine();
+        Monster mon = new Monster(500, name);
+        setNewMonster(mon);
         play();
     }
 
@@ -29,8 +33,6 @@ public class Play {
 
 
     private void start() {
-        setNewMonster(mon5);
-
         boolean running = true;
             while (running) {
                int check1 = player.getHealth();
