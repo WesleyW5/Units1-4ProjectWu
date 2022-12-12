@@ -1,8 +1,15 @@
 public class Monster {
     private int hp;
-    private int hp2;
+    final int hp2;
     private String name;
 
+    public int getHealth(){
+        return hp;
+    }
+
+    public String getName(){
+        return name;
+    }
 
     public Monster(int health, String name){
         hp = health;
@@ -10,23 +17,19 @@ public class Monster {
         hp2 = health;
     }
 
-    public String displayHealth(int damage){
+    public String damage(int damage){
        hp = hp - damage;
-       return "Player has attacked for " + damage + " damage. " + name + "now has " + hp + "/" + hp2 + " health.";
+       return "Player has attacked for " + damage + " damage. " + name + " now has " + hp + "/" + hp2 + " health.";
     }
 
     public int attack(){
-        int maxAttack = hp/10;
-        double crit = Math.random();
+        int maxAttack = hp/5;
         int temp = (int) (Math.random() * maxAttack) ;
-        if(crit < 0.1){
-            return (int) Math.pow(temp, 2);
-        } else {
-            return temp;
+        return temp;
         }
 
-    }
-
-
-
 }
+
+
+
+
